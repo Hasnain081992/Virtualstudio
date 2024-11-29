@@ -20,3 +20,7 @@ productprice1 = 120
 Tax = 10 / 100
 Totaltax = productprice1 * Tax
 print('The percentage result would be ',Totaltax)
+
+
+
+list = [1,2,3,4,5]
