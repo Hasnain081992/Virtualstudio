@@ -1,3 +1,5 @@
+
+# chapter 4.1
 x = [1,4,6,8]
 for num in x:
     print(num)
