@@ -1,6 +1,6 @@
 # Using flask to make an api 
 # import necessary libraries and functions 
-from  flask import Flask, jsonify, request 
+from  flask import Flask, jsonify,request
 
 # creating a Flask app 
 app = Flask(__name__) 
