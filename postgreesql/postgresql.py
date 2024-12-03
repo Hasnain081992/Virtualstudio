@@ -1,6 +1,9 @@
 import sqlalchemy
 from urllib.parse import quote_plus
 from sqlalchemy import create_engine , text
+from flask import Flask ,jsonify
+
+app = Flask(__name__)
 
 import pandas as pd
 
@@ -22,5 +25,19 @@ try:
 except Exception as e: 
     print("connection failed")
 
-#database1 = pd.read_sql("employee", con= engine)
-#print(database1)
+database1 = pd.read_sql("employee", con= engine)
+print(database1)
+
+df =database1.to_dict(orient='records')
+
+@app.route('/', methods=['GET'])
+def get_data():
+    data = df
+    if data is not None:
+        return jsonify(data), 200
+    else:
+        return jsonify({"error": "Unable to fetch data from database"}), 500
+
+if __name__ == '__main__':
+    # Run the app
+  app.run(host='0.0.0.0', port=5310, debug=True)
