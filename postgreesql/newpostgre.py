@@ -15,7 +15,7 @@ DB_NAME = "testdb"
 PORT = "5432"  # Default PostgreSQL port
 #ENCODED_PASSWORD = quote_plus(PASSWORD)
 
-db_url = f'{DATABASE_TYPE}://{USERNAME}:{ENCODED_PASSWORD}@{PUBLIC_IP}:{PORT}/{DB_NAME}"
+#db_url = f'{DATABASE_TYPE}://{USERNAME}:{ENCODED_PASSWORD}@{PUBLIC_IP}:{PORT}/{DB_NAME}"
 
 engine = create_engine('postgresql://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb')
 
