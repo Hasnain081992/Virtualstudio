@@ -31,7 +31,7 @@ print(database1)
 df =database1.to_dict(orient='records')
 print(df)
 
-@app.route('/data', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_data():
     data = df
     if data is not None:
