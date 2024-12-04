@@ -31,7 +31,7 @@ print(database1)
 df =database1.to_dict(orient='records')
 print(df)
 
-@app.route('/', methods=['GET'])
+@app.route('/get_data', methods=['GET'])
 def get_data():
     data = df
     if data is not None:
@@ -41,7 +41,7 @@ def get_data():
 
 if __name__ == '__main__':
     # Run the app
-  app.run(host='0.0.0.0', port=5310, debug=True)
+  app.run(host='0.0.0.0', port=5232, debug=True)
 
 
   # its working
