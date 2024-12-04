@@ -1,10 +1,10 @@
 import sqlalchemy
-from urllib.parse import quote_plus
+#from urllib.parse import quote_plus
 from sqlalchemy import create_engine , text
 from flask import Flask ,jsonify
 
 app = Flask(__name__)
-
+DATABASE_TYPE = 'postgresql'
 import pandas as pd
 
 # PostgreSQL connection details
@@ -13,24 +13,25 @@ USERNAME = "consultants"
 PASSWORD = "WelcomeItc@2022"
 DB_NAME = "testdb"
 PORT = "5432"  # Default PostgreSQL port
-ENCODED_PASSWORD = quote_plus(PASSWORD)
+#ENCODED_PASSWORD = quote_plus(PASSWORD)
 
-db_url = f"postgresql+psycopg2://{USERNAME}:{ENCODED_PASSWORD}@{PUBLIC_IP}:{PORT}/{DB_NAME}"
+db_url = f'{DATABASE_TYPE}://{USERNAME}:{ENCODED_PASSWORD}@{PUBLIC_IP}:{PORT}/{DB_NAME}"
 
-engine = create_engine(db_url)
+engine = create_engine('postgresql://consultants:WelcomeItc%402022@18.132.73.146:5432/testdb')
 
-try:
-    with engine.connect() as connection:
-        print("connection successful")
-except Exception as e: 
-    print("connection failed")
+#try:
+ #   with engine.connect() as connection:
+  #      print("connection successful")
+#except Exception as e: 
+ #   print("connection failed")
 
 database1 = pd.read_sql("employee", con= engine)
 print(database1)
 
 df =database1.to_dict(orient='records')
+print(df)
 
-@app.route('/', methods=['GET'])
+@app.route('/data', methods=['GET'])
 def get_data():
     data = df
     if data is not None:
