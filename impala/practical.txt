@@ -1,0 +1,150 @@
+PS C:\Users\44754\downloads> ssh -i "test_key.pem" ec2-user@18.134.132.202
+Register this system with Red Hat Insights: insights-client --register
+Create an account or view all your systems at https://red.ht/insights-dashboard
+Last login: Fri Dec 13 16:45:02 2024 from 94.12.154.35
+[ec2-user@ip-172-31-5-217 ~]$ ls
+ammad                     daniel_impala_shell_script  hivefile1.hql              myflask.py                rap_lyrics.java
+bank.java                 danieltb2.csv               housing_price_dataset.csv  myspark_csv.scala         SendDataToKafka.scala
+bd-us-2023                danieltb.csv                impalasc.csv               myspark_hive_postgres.py  smoking_data.csv
+bigdata_nov_2024          data.csv                    impala_script.sh           myspark_hive.py           spark.csv
+build.sbt                 derby.log                   impalasc.sh                myspark_hive_saeed.py     sqoop_exported_data.csv
+csvToJson.py              emp.csv                     kajal                      myspark_incremental.py    STORED
+CSVTransformations.scala  emp_impala.csv              leks1                      myspark_pgresdb.py        stud1.csv
+dan_example.csv           employeeT.csv               leks2                      myspark_pgresdb_test.py   stud2.csv
+daniel                    epm.csv                     mannyspark.py              myspark.py                stud.csv
+daniel_hivefile.hql       FIELDS                      metastore_db               myspark.scala             test.py
+daniel_hivefile.sql       hd                          mycsvToJson.py             my_test_table.java
+daniel_impala_script.sh   hi.csv                      mycsvToJson_updated.py     postgresql-42.6.0.jar
+[ec2-user@ip-172-31-5-217 ~]$ cd bigdata_nov_2024/
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ ls
+Hasnainitc  Hasnainp  hitesh  mucteba  obinna  prashob
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ cd hasnainitc
+-bash: cd: hasnainitc: No such file or directory
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ cd Hasnainitc
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ ls
+data3.csv  data.csv  info1.csv  info2.csv  info.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn
+Found 5 items
+-rw-r--r--   3 ec2-user hadoop        136 2024-12-12 10:49 /tmp/bigdata_nov_2024/Hasnainnn/data.csv
+-rw-r--r--   3 ec2-user hadoop         68 2024-12-10 16:36 /tmp/bigdata_nov_2024/Hasnainnn/data2.csv
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-12 10:37 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 22:31 /tmp/bigdata_nov_2024/Hasnainnn/output3
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-10 12:07 /tmp/bigdata_nov_2024/Hasnainnn/output5
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ cd ..
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ ls
+Hasnainitc  Hasnainp  hitesh  mucteba  obinna  prashob
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ ls
+Hasnainitc  Hasnainp  hitesh  mucteba  obinna  prashob
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ cd Hasnain
+-bash: cd: Hasnain: No such file or directory
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ cd Hasnain/
+-bash: cd: Hasnain/: No such file or directory
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ cd ..
+[ec2-user@ip-172-31-5-217 ~]$ ls
+ammad                     daniel_impala_shell_script  hivefile1.hql              myflask.py                rap_lyrics.java
+bank.java                 danieltb2.csv               housing_price_dataset.csv  myspark_csv.scala         SendDataToKafka.scala
+bd-us-2023                danieltb.csv                impalasc.csv               myspark_hive_postgres.py  smoking_data.csv
+bigdata_nov_2024          data.csv                    impala_script.sh           myspark_hive.py           spark.csv
+build.sbt                 derby.log                   impalasc.sh                myspark_hive_saeed.py     sqoop_exported_data.csv
+csvToJson.py              emp.csv                     kajal                      myspark_incremental.py    STORED
+CSVTransformations.scala  emp_impala.csv              leks1                      myspark_pgresdb.py        stud1.csv
+dan_example.csv           employeeT.csv               leks2                      myspark_pgresdb_test.py   stud2.csv
+daniel                    epm.csv                     mannyspark.py              myspark.py                stud.csv
+daniel_hivefile.hql       FIELDS                      metastore_db               myspark.scala             test.py
+daniel_hivefile.sql       hd                          mycsvToJson.py             my_test_table.java
+daniel_impala_script.sh   hi.csv                      mycsvToJson_updated.py     postgresql-42.6.0.jar
+[ec2-user@ip-172-31-5-217 ~]$ cd bigdata_nov_2024/Hasnain
+-bash: cd: bigdata_nov_2024/Hasnain: No such file or directory
+[ec2-user@ip-172-31-5-217 ~]$ cd bigdata_nov_2024/
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ ls
+Hasnainitc  Hasnainp  hitesh  mucteba  obinna  prashob
+[ec2-user@ip-172-31-5-217 bigdata_nov_2024]$ cd Hasnainitc
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ ls
+data3.csv  data.csv  info1.csv  info2.csv  info.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ cp data3.csv data4.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ vi data3.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -put /tmp/bigdata_nov_2024/Hasnainnn
+put: `/tmp/bigdata_nov_2024/Hasnainnn': No such file or directory
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -put data3.csv /tmp/bigdata_nov_2024/Hasnainnn
+put: `/tmp/bigdata_nov_2024/Hasnainnn/data3.csv': File exists
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -put data3.csv /tmp/bigdata_nov_2024/Hasnainnn/
+put: `/tmp/bigdata_nov_2024/Hasnainnn/data3.csv': File exists
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -rv -r /tmp/bigdata_nov_2024/Hasnainnn/
+-rv: Unknown command
+Usage: hadoop fs [generic options]
+        [-appendToFile <localsrc> ... <dst>]
+        [-cat [-ignoreCrc] <src> ...]
+        [-checksum <src> ...]
+        [-chgrp [-R] GROUP PATH...]
+        [-chmod [-R] <MODE[,MODE]... | OCTALMODE> PATH...]
+        [-chown [-R] [OWNER][:[GROUP]] PATH...]
+        [-copyFromLocal [-f] [-p] [-l] [-d] [-t <thread count>] <localsrc> ... <dst>]
+        [-copyToLocal [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+        [-count [-q] [-h] [-v] [-t [<storage type>]] [-u] [-x] [-e] [-s] <path> ...]
+        [-cp [-f] [-p | -p[topax]] [-d] <src> ... <dst>]
+        [-createSnapshot <snapshotDir> [<snapshotName>]]
+        [-deleteSnapshot <snapshotDir> <snapshotName>]
+        [-df [-h] [<path> ...]]
+        [-du [-s] [-h] [-v] [-x] <path> ...]
+        [-expunge [-immediate]]
+        [-find <path> ... <expression> ...]
+        [-get [-f] [-p] [-ignoreCrc] [-crc] <src> ... <localdst>]
+        [-getfacl [-R] <path>]
+        [-getfattr [-R] {-n name | -d} [-e en] <path>]
+        [-getmerge [-nl] [-skip-empty-file] <src> <localdst>]
+        [-head <file>]
+        [-help [cmd ...]]
+        [-ls [-C] [-d] [-h] [-q] [-R] [-t] [-S] [-r] [-u] [-e] [<path> ...]]
+        [-mkdir [-p] <path> ...]
+        [-moveFromLocal [-f] [-p] [-l] [-d] <localsrc> ... <dst>]
+        [-moveToLocal <src> <localdst>]
+        [-mv <src> ... <dst>]
+        [-put [-f] [-p] [-l] [-d] [-t <thread count>] <localsrc> ... <dst>]
+        [-renameSnapshot <snapshotDir> <oldName> <newName>]
+        [-rm [-f] [-r|-R] [-skipTrash] [-safely] <src> ...]
+        [-rmdir [--ignore-fail-on-non-empty] <dir> ...]
+        [-setfacl [-R] [{-b|-k} {-m|-x <acl_spec>} <path>]|[--set <acl_spec> <path>]]
+        [-setfattr {-n name [-v value] | -x name} <path>]
+        [-setrep [-R] [-w] <rep> <path> ...]
+        [-stat [format] <path> ...]
+        [-tail [-f] [-s <sleep interval>] <file>]
+        [-test -[defsz] <path>]
+        [-text [-ignoreCrc] <src> ...]
+        [-touch [-a] [-m] [-t TIMESTAMP (yyyyMMdd:HHmmss) ] [-c] <path> ...]
+        [-touchz <path> ...]
+        [-truncate [-w] <length> <path> ...]
+        [-usage [cmd ...]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -rm -r /tmp/bigdata_nov_2024/Hasnainnn
+24/12/13 17:25:26 INFO fs.TrashPolicyDefault: Moved: 'hdfs://ip-172-31-3-80.eu-west-2.compute.internal:8020/tmp/bigdata_nov_2024/Hasnainnn' to trash at: hdfs://ip-172-31-3-80.eu-west-2.compute.internal:8020/user/ec2-user/.Trash/Current/tmp/bigdata_nov_2024/Hasnainnn
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn
+ls: `/tmp/bigdata_nov_2024/Hasnainnn': No such file or directory
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -ls /tmp/bigdata_nov_2024/
+Found 8 items
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-12 01:14 /tmp/bigdata_nov_2024/Hasnain
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-09 18:28 /tmp/bigdata_nov_2024/Hitesh
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-11 12:07 /tmp/bigdata_nov_2024/hitesh
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:30 /tmp/bigdata_nov_2024/mucteba
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:36 /tmp/bigdata_nov_2024/niraj
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:47 /tmp/bigdata_nov_2024/obinna
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:24 /tmp/bigdata_nov_2024/prashob
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 12:23 /tmp/bigdata_nov_2024/sujay
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -mkdir /tmp/bigdata_nov_2024/Hasnainnn
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -put data3.csv /tmp/bigdata_nov_2024/Hasnainnn/
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ ls
+data3.csv  data4.csv  data.csv  info1.csv  info2.csv  info.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ cp data4.csv data5.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ vi data5.csv
+[ec2-user@ip-172-31-5-217 Hasnainitc]$ hdfs dfs -put data5.csv /tmp/bigdata_nov_2024/Hasnainnn/

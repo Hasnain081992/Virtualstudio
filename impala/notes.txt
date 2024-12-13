@@ -1,0 +1,63 @@
+Impala
+
+
+it is a general purpose hql
+it does not go to map reduce
+Impala is optimized for fast, interactive querying, making it suitable for big data analytics.
+Impala is not faullt tolerance. If node fail it cannot recover data
+it design for analytical query. developed by cloudera
+i have dashboard and want to show data so for analysis puuorpose instead of hive, impala is faster.because its used massive parallel processing
+
+
+purpose: fast result.
+not used for ingestion purpose. means to load data in datala lake . it used only for query purpose
+
+
+Disadvantage
+cant access acid transaction which means we can write select * from (table name), insert ,update,delete
+
+hive: ingesting data/ creatinf data warehouse/batch processing
+query/ana;utical/dashboard----Impala
+
+
+
+----------------------------------------------------------
+
+
+hue
+-----------------
+centralised place so execute data 
+its used in ide
+
+can write query in hue
+
+impala store data in cas meansi within the memory
+
+impala its own daemon server it not use yarn
+impala its master master
+hive master slave
+
+
+--------------------
+
+
+practical
+
+
+
+go to hue--hive--
+type: show create table(table name);
+-copy the path /tmp----
+go to cmd and connect with server by typing ssh -i "test_key.pem" ec2-user@18.134.132.202
+LS
+bigdata_nov_2024/ Hasnain
+edit data file and add or delete colum save it
+hdfs dfs -put (paste the path)
+
+go to hive app and you see the updates but when you go to impala you can t see the updates in external file changes
+so for changes 
+run a command in impala
+------
+invalidate metadata;
+------
+
