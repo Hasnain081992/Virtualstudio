@@ -1,0 +1,109 @@
+scoop  full load
+
+
+its a spooling tool jut bring data from one place and put into another place.
+no need for transformation
+just copy and paste
+
+                                        Full load
+bring data from PostgreSQL to Hadoop for analytical purpose 
+
+ follow ste
+
+ we use sccop commands to get data from postgre to hdfs
+
+data to check what data we have:  
+we need server which postgre data was located
+
+go to dbvear to get server ip:  18.132.73.146
+
+run this command : in Linux server : sqoop list-databases --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -P -------to connect
+
+password: WelcomeItc@2022  ---------password
+
+
+---- to list a table in database type this command
+
+sqoop list-tables --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -P
+
+
+to list down the files so we can write this command
+
+ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn   ---------------
+
+
+
+sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table people --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop          ---------------------table name person and import into to Hasnainnn and create new folder name PostgreSQL   importing  people data from  scoop server postgre to hdfs
+
+    I have created second one for practice here I have taken tablename : payments and new folder : postgres
+sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table payments --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgre
+
+sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table people --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgreshas
+
+
+
+to check whether data import or not in hdfs 
+
+--------------
+
+hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/
+hdfs dfs- ls  /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/(type part -m 00000)
+
+
+now second step   external table
+
+
+to find out colum name go to dbeaver(server)
+
+type 
+SELECT column_name
+FROM information_schema.columns
+WHERE table_schema = 'public'  -- Replace with your schema name if it's different
+  AND table_name   = 'people';  -- Replace with your table name
+
+
+copy output and paste to notepad for edit
+
+people_id INT,
+name VARCHAR(50),
+age INT,
+occupation VARCHAR(50)
+
+after that create external table
+
+
+CREATE EXTERNAL TABLE  hasnainitc.people (
+people_id INT,
+name VARCHAR(50),
+age INT,
+occupation VARCHAR(50)
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','  
+LINES TERMINATED BY '\n'  
+STORED AS TEXTFILE
+LOCATION '/tmp/bigdata_nov_2024/Hasnainnn/postgrescoop';(this is location which I created file)
+
+
+copy above path and paste to hive( hue)
+
+
+
+after that type
+select * from database.tablename  eg
+select * from hasnainitc.people
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

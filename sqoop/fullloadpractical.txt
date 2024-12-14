@@ -1,0 +1,1767 @@
+scoop full load practical
+
+
+
+Authenticating with public key "Imported-Openssh-Key"
+    ┌──────────────────────────────────────────────────────────────────────┐
+    │                 • MobaXterm Personal Edition v24.3 •                 │
+    │               (SSH client, X server and network tools)               │
+    │                                                                      │
+    │ ⮞ SSH session to ec2-user@13.40.76.180                               │
+    │   • Direct SSH      :  ✓                                             │
+    │   • SSH compression :  ✓                                             │
+    │   • SSH-browser     :  ✓                                             │
+    │   • X11-forwarding  :  ✗  (disabled or not supported by server)      │
+    │                                                                      │
+    │ ⮞ For more info, ctrl+click on help or visit our website.            │
+    └──────────────────────────────────────────────────────────────────────┘
+
+Register this system with Red Hat Insights: insights-client --register
+Create an account or view all your systems at https://red.ht/insights-dashboard
+Last login: Fri Dec 13 12:45:18 2024 from 203.192.204.74
+[ec2-user@ip-172-31-13-101 ~]$ ls
+Anu_Count_Hbase.scala  employees.java                        out.csv                SparkMachineLearningLibrary.py
+anu_sqp1.java          employee_t.java                       part-00001             spark-warehouse
+anu_sqp.java           exttbl.hql                            part.csv               studentT.csv
+bank_full.java         file.txt                              people.hql             tdata.csv
+bank.java              hocine_us_states.java                 people.java            temptable.csv
+BD_USUK_30012024       idx.txt                               person.java            test1.csv
+bigdata_nov_2024       incremental_load_non-customized_2.sh  p_ex.csv               test.sh
+catbd125               incremental_tbl.java                  p_increment            the_z_table.java
+csvfromimpala.sh       incr_tabl.java                        p_increment.txt        tmp.text
+csvfromimpalaT.sh      incr_tbl.java                         postgresql-42.5.3.jar  Untitled1.ipynb
+customer.java          infoname2.java                        Pravith_sqp.java       Untitled2.ipynb
+data.csv               in_tbl.java                           prod                   Untitled.ipynb
+derby.log              keith.java                            prod1.csv              zip
+elaheh_test.java       keith_sq.java                         py36env                zip.csv
+emp1.csv               lipsum.txt                            QueryResult.java       zip.txt
+emp2.csv               loaddatam.csv                         sales_data.csv
+emp3.csv               metastore_db                          sample.py
+emp.csv                nazir_test.java                       sanket_user.java
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-databases --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -P
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 14:57:57 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+Enter password:
+24/12/14 14:57:57 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 14:57:58 ERROR manager.CatalogQueryManager: Failed to list databases
+org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.postgresql.Driver.connect(Driver.java:281)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:247)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:888)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listDatabases(CatalogQueryManager.java:57)
+        at org.apache.sqoop.tool.ListDatabasesTool.run(ListDatabasesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: java.lang.IllegalArgumentException: Empty string 'password'
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotEmpty(Preconditions.java:56)
+        at org.postgresql.shaded.com.ongres.scram.client.ScramSession$ServerFirstProcessor.clientFinalProcessor(ScramSession.java:128)
+        at org.postgresql.jre7.sasl.ScramAuthenticator.processServerFirstMessage(ScramAuthenticator.java:132)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:690)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        ... 12 more
+24/12/14 14:57:58 ERROR sqoop.Sqoop: Got exception running Sqoop: java.lang.RuntimeException: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+java.lang.RuntimeException: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.apache.sqoop.manager.CatalogQueryManager.listDatabases(CatalogQueryManager.java:73)
+        at org.apache.sqoop.tool.ListDatabasesTool.run(ListDatabasesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.postgresql.Driver.connect(Driver.java:281)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:247)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:888)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listDatabases(CatalogQueryManager.java:57)
+        ... 7 more
+Caused by: java.lang.IllegalArgumentException: Empty string 'password'
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotEmpty(Preconditions.java:56)
+        at org.postgresql.shaded.com.ongres.scram.client.ScramSession$ServerFirstProcessor.clientFinalProcessor(ScramSession.java:128)
+        at org.postgresql.jre7.sasl.ScramAuthenticator.processServerFirstMessage(ScramAuthenticator.java:132)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:690)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        ... 12 more
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-databases --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -P
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 14:58:49 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+Enter password:
+
+24/12/14 15:00:18 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 15:00:19 ERROR manager.CatalogQueryManager: Failed to list databases
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "consultants"
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:525)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:247)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:888)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listDatabases(CatalogQueryManager.java:57)
+        at org.apache.sqoop.tool.ListDatabasesTool.run(ListDatabasesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+24/12/14 15:00:19 ERROR sqoop.Sqoop: Got exception running Sqoop: java.lang.RuntimeException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "consultants"
+java.lang.RuntimeException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "consultants"
+        at org.apache.sqoop.manager.CatalogQueryManager.listDatabases(CatalogQueryManager.java:73)
+        at org.apache.sqoop.tool.ListDatabasesTool.run(ListDatabasesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "consultants"
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:525)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:247)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:888)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listDatabases(CatalogQueryManager.java:57)
+        ... 7 more
+[ec2-user@ip-172-31-13-101 ~]$
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-databases --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -P
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:00:43 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+Enter password:
+24/12/14 15:01:00 INFO manager.SqlManager: Using default fetchSize of 1000
+postgres
+template1
+template0
+testdb
+airflowdb
+[ec2-user@ip-172-31-13-101 ~]$ postgres
+-bash: postgres: command not found
+[ec2-user@ip-172-31-13-101 ~]$ ls postgres
+ls: cannot access 'postgres': No such file or directory
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-tables --connect jdbc:postgresql://18.132.73.146:5432/testdb
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:07:16 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 15:07:17 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 15:07:18 ERROR manager.CatalogQueryManager: Failed to list tables
+org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.postgresql.Driver.connect(Driver.java:281)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:270)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:886)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listTables(CatalogQueryManager.java:102)
+        at org.apache.sqoop.tool.ListTablesTool.run(ListTablesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: java.lang.IllegalArgumentException: Null value for 'password'
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotNull(Preconditions.java:41)
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotEmpty(Preconditions.java:55)
+        at org.postgresql.shaded.com.ongres.scram.client.ScramSession$ServerFirstProcessor.clientFinalProcessor(ScramSession.java:128)
+        at org.postgresql.jre7.sasl.ScramAuthenticator.processServerFirstMessage(ScramAuthenticator.java:132)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:690)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        ... 12 more
+24/12/14 15:07:18 ERROR sqoop.Sqoop: Got exception running Sqoop: java.lang.RuntimeException: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+java.lang.RuntimeException: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.apache.sqoop.manager.CatalogQueryManager.listTables(CatalogQueryManager.java:118)
+        at org.apache.sqoop.tool.ListTablesTool.run(ListTablesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.postgresql.Driver.connect(Driver.java:281)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:270)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:886)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listTables(CatalogQueryManager.java:102)
+        ... 7 more
+Caused by: java.lang.IllegalArgumentException: Null value for 'password'
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotNull(Preconditions.java:41)
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotEmpty(Preconditions.java:55)
+        at org.postgresql.shaded.com.ongres.scram.client.ScramSession$ServerFirstProcessor.clientFinalProcessor(ScramSession.java:128)
+        at org.postgresql.jre7.sasl.ScramAuthenticator.processServerFirstMessage(ScramAuthenticator.java:132)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:690)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        ... 12 more
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-tables --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:08:15 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 15:08:15 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 15:08:16 ERROR manager.CatalogQueryManager: Failed to list tables
+org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.postgresql.Driver.connect(Driver.java:281)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:247)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:888)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listTables(CatalogQueryManager.java:102)
+        at org.apache.sqoop.tool.ListTablesTool.run(ListTablesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: java.lang.IllegalArgumentException: Empty string 'password'
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotEmpty(Preconditions.java:56)
+        at org.postgresql.shaded.com.ongres.scram.client.ScramSession$ServerFirstProcessor.clientFinalProcessor(ScramSession.java:128)
+        at org.postgresql.jre7.sasl.ScramAuthenticator.processServerFirstMessage(ScramAuthenticator.java:132)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:690)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        ... 12 more
+24/12/14 15:08:16 ERROR sqoop.Sqoop: Got exception running Sqoop: java.lang.RuntimeException: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+java.lang.RuntimeException: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.apache.sqoop.manager.CatalogQueryManager.listTables(CatalogQueryManager.java:118)
+        at org.apache.sqoop.tool.ListTablesTool.run(ListTablesTool.java:49)
+        at org.apache.sqoop.Sqoop.run(Sqoop.java:151)
+        at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:76)
+        at org.apache.sqoop.Sqoop.runSqoop(Sqoop.java:187)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:241)
+        at org.apache.sqoop.Sqoop.runTool(Sqoop.java:250)
+        at org.apache.sqoop.Sqoop.main(Sqoop.java:259)
+Caused by: org.postgresql.util.PSQLException: Something unusual has occurred to cause the driver to fail. Please report this exception.
+        at org.postgresql.Driver.connect(Driver.java:281)
+        at java.sql.DriverManager.getConnection(DriverManager.java:664)
+        at java.sql.DriverManager.getConnection(DriverManager.java:247)
+        at org.apache.sqoop.manager.SqlManager.makeConnection(SqlManager.java:888)
+        at org.apache.sqoop.manager.GenericJdbcManager.getConnection(GenericJdbcManager.java:59)
+        at org.apache.sqoop.manager.CatalogQueryManager.listTables(CatalogQueryManager.java:102)
+        ... 7 more
+Caused by: java.lang.IllegalArgumentException: Empty string 'password'
+        at org.postgresql.shaded.com.ongres.scram.common.util.Preconditions.checkNotEmpty(Preconditions.java:56)
+        at org.postgresql.shaded.com.ongres.scram.client.ScramSession$ServerFirstProcessor.clientFinalProcessor(ScramSession.java:128)
+        at org.postgresql.jre7.sasl.ScramAuthenticator.processServerFirstMessage(ScramAuthenticator.java:132)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:690)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146)
+        at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:197)
+        at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+        at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:217)
+        at org.postgresql.Driver.makeConnection(Driver.java:458)
+        at org.postgresql.Driver.connect(Driver.java:260)
+        ... 12 more
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-tables --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -p
+
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:09:30 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 15:09:30 ERROR tool.BaseSqoopTool: Error parsing arguments for list-tables:
+24/12/14 15:09:30 ERROR tool.BaseSqoopTool: Unrecognized argument: -p
+
+Try --help for usage instructions.
+[ec2-user@ip-172-31-13-101 ~]$
+[ec2-user@ip-172-31-13-101 ~]$
+[ec2-user@ip-172-31-13-101 ~]$ sqoop list-tables --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants -P
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:09:51 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+Enter password:
+24/12/14 15:16:57 INFO manager.SqlManager: Using default fetchSize of 1000
+abbas_test
+project_info
+project_info_seb
+paccounts_1
+elaheh_test
+anu_sqp1
+customer_churn
+customer_churn_data
+incr_tabl
+incr_tbl
+in_tbl
+friday_table
+zzz_seb_table_1
+z1_seb_table_1
+z4_seb_table_1
+z7_seb_table_1
+nag_clean_allseason_summary
+pravith_hi
+train_carinsuranceclaims
+test_carinsuranceclaims
+health_insurance
+anu_sqp
+nazir_test
+nag_emp
+ze_table
+department
+employee
+newtable
+keith_sq
+people
+seb_sq
+thursday_table
+winsales
+elaheh_employee
+unnormalized_orders
+new_customer
+sanket_user
+hocine_us_states
+nag_emp1
+paccounts
+the_table
+e_student
+zzzz_seb_table_1
+z2_seb_table_1
+z5_seb_table_1
+train-data
+paccounts_5
+orders
+asad_table
+inc_tbl
+person
+incremental_tbl
+Pravith_sqp
+seb_table
+the_z_table
+zz_seb_table_1
+z0_seb_table_1
+z3_seb_table_1
+z6_seb_table_1
+juanproduct1
+nazir_data
+sample_name
+untitled_spreadsheet
+nifikeithdata
+keith_nifi
+nifi_hocine
+car_insurance_claims1
+pravith_nifi
+nazir_fload
+nazir_iload
+car_insurance_claims_p
+car_insurance_claims_p1
+paccounts777
+car_insurance_claims_demo
+car_insurance_claims_demo1
+customer1
+people1
+people2
+churn_data
+nifi_demo
+nag_clean_allseason_details
+car-insurance-claims
+car_insurance_claims
+car_insurance_claims_rds
+solomon_table
+location
+daily_record
+hourly_record
+customer_priyanshu
+my_table
+jemp
+peopler
+peopleb
+arun_tem
+peoplers
+peoplersv
+vanathi
+testarun
+solo_people
+peopler_nag
+ian_test
+empr
+empb
+smaple_nag
+sample_nag
+v_orders
+peopler1
+emp_idris
+peoplenag_test
+invoices_new
+member_schemes
+nag_ipl_summary1_2023
+nag_clean_allseason_batting_card
+nag_clean_allseason_bowling_card
+nag_clean_allseason_s_details
+accountstable
+mimic1
+churn
+invoices1_new
+customers
+emp_details
+accounts1
+customers1
+transactions1
+demp
+customer_replicate
+customerstable
+nag_cricket
+employee_t
+prediction
+nag_batting_full
+updated_customers_table
+productline
+nag_ipl_summary
+nag_ipl_summary1
+nag_cricket_ball_by_ball
+nag_cricket_test
+nag_cricket_match
+customer_andriy
+ztable
+member_schemes_inc
+nag_batting_fullload
+nag_ball_by_ball
+nag_summary_full_new
+usecaseddf1
+transactionstable
+students
+supermarket
+nag_summary_full
+customer_ramin
+customer_Muyiwa
+customer_name
+customer_country
+customer_nm
+nag_summary_fullload
+member_schemes1
+customer
+order1
+orders1
+employee_imported
+infoname
+nag_cricket_summary
+nag_cricket_batting
+branch
+infoname2
+bank
+customer2
+raplyrics
+rap_lyrics
+smoking
+nvidia_stock_price
+bank-Saeed
+kaggle_kaushal
+house_price
+companies
+assets
+indicators
+bank_full
+metadata
+ajayemp
+customer_r
+customer_bharathi
+customer_Priya
+customer_Smita
+customer_anu
+r_customer
+sales_changes
+new_employees
+etfprices
+tweett
+usert
+locationt
+pranay_emp_copy
+s_inventory
+gdp
+rabbani
+insurance_table
+anu_test1
+anu_test2
+customer_support
+juanemp
+juanemp1
+ramin_employees
+nke
+v
+aapl
+pg
+pld
+xel
+nflx
+eqix
+ba
+tsla
+ma
+nee
+cop
+o
+bp
+duk
+jnj
+toyota
+jpm
+xom
+amt
+samsungelectronics
+msft
+d
+wmt
+ge
+cat
+pfe
+googl
+so
+aep
+gs
+unp
+dis
+bac
+nvda
+amzn
+baba
+cmcsa
+nestle
+hd
+spg
+unh
+t
+vz
+abbv
+hon
+mrna
+meta
+mcd
+curated_emp
+heart_patients
+insurance
+medical_cost
+david_product
+firsttable
+veena_amazonbooks
+veena_amazonbooks_1
+bookanal_v
+aggregated_df
+combined_df
+fraud_table
+tt
+market_table
+stock
+historical_prices_table
+real_time_prices_table
+temp_table
+ec_product_catalog
+ec_customer_data
+ec_user_interaction
+ec_region_data
+newsfeed
+stock_prices
+stock_data
+customerstbl
+orderstbl
+payments
+addresses
+news_feed
+ticker_sentiment
+products_copy
+rproducts
+sidproducts
+vproducts
+hproducts
+ianproducts
+prproducts
+juanproduct
+daproducts
+dprodutcts1
+dproduct
+products_vk
+fc_barcelona
+daproducts1
+emp
+employees
+vechile_sales
+employeewindowfunction
+heart_patient_cdc
+testgfhili
+new_table
+sales_j
+menu_j
+members_j
+p2_user_interaction
+q1_j
+q1_1_j
+q2_j
+q3_j
+q4_j
+q5_j
+awsetfs
+q6_j
+departments123
+vehicle_sales
+heart_patient
+flight_records
+users
+timestamp_table
+amazon_reviews_last_loaded
+past_sales
+netflix_sid_movies
+netflix_sid_links
+netflix_sid_real_time_movies
+netflix_sid_ratings
+scm_inventory
+features
+netflix_sid_tags
+store
+new_sales
+scm_suppliers
+scm_shipments
+scm_sales
+product_category
+etfs
+user_interaction
+amazon_reviews
+airline
+vk_stock_prices_il
+customer_ravi
+vk_stock_prices
+departments1
+data
+departments12
+nassim
+firstTable
+employees1
+department1
+employeesmay
+UKCityMaster
+firsttableprash
+firsttablepr29
+rupalicustomer
+siddheshcustomer
+siddheshcustomernew
+bharathcustomer
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/
+
+Found 9 items
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-12 01:14 /tmp/bigdata_nov_2024/Hasnain
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-09 18:28 /tmp/bigdata_nov_2024/Hitesh
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-11 12:07 /tmp/bigdata_nov_2024/hitesh
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:30 /tmp/bigdata_nov_2024/mucteba
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:36 /tmp/bigdata_nov_2024/niraj
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:47 /tmp/bigdata_nov_2024/obinna
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 10:24 /tmp/bigdata_nov_2024/prashob
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-13 12:23 /tmp/bigdata_nov_2024/sujay
+[ec2-user@ip-172-31-13-101 ~]$
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnain
+
+Found 15 items
+drwxr-xr-x   - hdfs     hadoop          0 2024-12-06 15:47 /tmp/bigdata_nov_2024/Hasnain/count
+drwxr-xr-x   - hdfs     hadoop          0 2024-12-06 12:55 /tmp/bigdata_nov_2024/Hasnain/count9
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-11 23:40 /tmp/bigdata_nov_2024/Hasnain/data
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-09 18:27 /tmp/bigdata_nov_2024/Hasnain/data.csv
+-rw-r--r--   3 ec2-user hadoop        734 2024-12-06 11:56 /tmp/bigdata_nov_2024/Hasnain/data.txt
+-rw-r--r--   3 ec2-user hadoop        803 2024-12-06 15:27 /tmp/bigdata_nov_2024/Hasnain/hasina.txt
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-10 12:04 /tmp/bigdata_nov_2024/Hasnain/mapreduce
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 11:46 /tmp/bigdata_nov_2024/Hasnain/output2
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 13:26 /tmp/bigdata_nov_2024/Hasnain/output4
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 16:29 /tmp/bigdata_nov_2024/Hasnain/output6
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 16:49 /tmp/bigdata_nov_2024/Hasnain/output7
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 16:58 /tmp/bigdata_nov_2024/Hasnain/output8
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 17:30 /tmp/bigdata_nov_2024/Hasnain/output9
+drwxrwxrwx   - ec2-user hadoop          0 2024-12-12 01:38 /tmp/bigdata_nov_2024/Hasnain/sales_data
+drwxrwxrwx   - ec2-user hadoop          0 2024-12-12 00:44 /tmp/bigdata_nov_2024/Hasnain/sales_data_partioned
+[ec2-user@ip-172-31-13-101 ~]$
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn
+Found 2 items
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-13 17:27 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn/data5.csv
+[ec2-user@ip-172-31-13-101 ~]$ ^C
+[ec2-user@ip-172-31-13-101 ~]$ ^C
+[ec2-user@ip-172-31-13-101 ~]$ sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table people --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+
+
+
+
+
+
+
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:36:43 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 15:36:44 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+24/12/14 15:36:44 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 15:36:44 INFO tool.CodeGenTool: Beginning code generation
+24/12/14 15:36:47 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM "people" AS t LIMIT 1
+24/12/14 15:36:47 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce
+warning: No SupportedSourceVersion annotation found on org.apache.hadoop.hdds.conf.ConfigFileGenerator, returning RELEASE_6.
+warning: Supported source version 'RELEASE_6' from annotation processor 'org.apache.hadoop.hdds.conf.ConfigFileGenerator' less than -source '1.8'
+2 warnings
+24/12/14 15:36:58 WARN orm.CompilationManager: Could not rename /tmp/sqoop-ec2-user/compile/b595350627d68301703c6e2067f6a501/people.java to /home/ec2-user/./people.java. Error: Destination '/home/ec2-user/./people.java' already exists
+24/12/14 15:36:58 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-ec2-user/compile/b595350627d68301703c6e2067f6a501/people.jar
+24/12/14 15:36:58 WARN manager.PostgresqlManager: It looks like you are importing from postgresql.
+24/12/14 15:36:58 WARN manager.PostgresqlManager: This transfer can be faster! Use the --direct
+24/12/14 15:36:58 WARN manager.PostgresqlManager: option to exercise a postgresql-specific fast path.
+24/12/14 15:36:58 INFO mapreduce.ImportJobBase: Beginning import of people
+^C[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+ls: `/tmp/bigdata_nov_2024/Hasnainnn/postgrescoop': No such file or directory
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/
+Found 2 items
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-13 17:27 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn/data5.csv
+[ec2-user@ip-172-31-13-101 ~]$ sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table person --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:39:12 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 15:39:12 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+24/12/14 15:39:12 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 15:39:12 INFO tool.CodeGenTool: Beginning code generation
+24/12/14 15:39:13 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM "person" AS t LIMIT 1
+24/12/14 15:39:14 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce
+warning: No SupportedSourceVersion annotation found on org.apache.hadoop.hdds.conf.ConfigFileGenerator, returning RELEASE_6.
+warning: Supported source version 'RELEASE_6' from annotation processor 'org.apache.hadoop.hdds.conf.ConfigFileGenerator' less than -source '1.8'
+2 warnings
+24/12/14 15:39:21 WARN orm.CompilationManager: Could not rename /tmp/sqoop-ec2-user/compile/e3400f8a9937295ecb05fc298a6228ef/person.java to /home/ec2-user/./person.java. Error: Destination '/home/ec2-user/./person.java' already exists
+24/12/14 15:39:21 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-ec2-user/compile/e3400f8a9937295ecb05fc298a6228ef/person.jar
+24/12/14 15:39:21 WARN manager.PostgresqlManager: It looks like you are importing from postgresql.
+24/12/14 15:39:21 WARN manager.PostgresqlManager: This transfer can be faster! Use the --direct
+24/12/14 15:39:21 WARN manager.PostgresqlManager: option to exercise a postgresql-specific fast path.
+24/12/14 15:39:21 INFO mapreduce.ImportJobBase: Beginning import of person
+24/12/14 15:39:21 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+24/12/14 15:39:24 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+24/12/14 15:39:25 INFO client.RMProxy: Connecting to ResourceManager at ip-172-31-3-80.eu-west-2.compute.internal/172.31.3.80:8032
+24/12/14 15:39:27 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/ec2-user/.staging/job_1729093996149_0486
+24/12/14 15:39:46 INFO db.DBInputFormat: Using read commited transaction isolation
+24/12/14 15:39:47 INFO mapreduce.JobSubmitter: number of splits:1
+24/12/14 15:39:47 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1729093996149_0486
+24/12/14 15:39:47 INFO mapreduce.JobSubmitter: Executing with tokens: []
+24/12/14 15:39:49 INFO conf.Configuration: resource-types.xml not found
+24/12/14 15:39:49 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+24/12/14 15:39:49 INFO impl.YarnClientImpl: Submitted application application_1729093996149_0486
+24/12/14 15:39:50 INFO mapreduce.Job: The url to track the job: http://ip-172-31-3-80.eu-west-2.compute.internal:8088/proxy/application_1729093996149_0486/
+24/12/14 15:39:50 INFO mapreduce.Job: Running job: job_1729093996149_0486
+24/12/14 15:40:21 INFO mapreduce.Job: Job job_1729093996149_0486 running in uber mode : false
+24/12/14 15:40:21 INFO mapreduce.Job:  map 0% reduce 0%
+24/12/14 15:40:31 INFO mapreduce.Job:  map 100% reduce 0%
+24/12/14 15:40:32 INFO mapreduce.Job: Job job_1729093996149_0486 completed successfully
+24/12/14 15:40:33 INFO mapreduce.Job: Counters: 33
+        File System Counters
+                FILE: Number of bytes read=0
+                FILE: Number of bytes written=260202
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=85
+                HDFS: Number of bytes written=7982
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=1
+                Other local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=6533
+                Total time spent by all reduces in occupied slots (ms)=0
+                Total time spent by all map tasks (ms)=6533
+                Total vcore-milliseconds taken by all map tasks=26132
+                Total megabyte-milliseconds taken by all map tasks=53518336
+        Map-Reduce Framework
+                Map input records=206
+                Map output records=206
+                Input split bytes=85
+                Spilled Records=0
+                Failed Shuffles=0
+                Merged Map outputs=0
+                GC time elapsed (ms)=44
+                CPU time spent (ms)=1660
+                Physical memory (bytes) snapshot=339423232
+                Virtual memory (bytes) snapshot=6636658688
+                Total committed heap usage (bytes)=361758720
+                Peak Map Physical memory (bytes)=339423232
+                Peak Map Virtual memory (bytes)=6636658688
+        File Input Format Counters
+                Bytes Read=0
+        File Output Format Counters
+                Bytes Written=7982
+24/12/14 15:40:33 INFO mapreduce.ImportJobBase: Transferred 7.7949 KB in 68.3046 seconds (116.8589 bytes/sec)
+24/12/14 15:40:33 INFO mapreduce.ImportJobBase: Retrieved 206 records.
+[ec2-user@ip-172-31-13-101 ~]$ sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table payments --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgres
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 15:41:51 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 15:41:51 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+24/12/14 15:41:51 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 15:41:51 INFO tool.CodeGenTool: Beginning code generation
+24/12/14 15:41:53 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM "payments" AS t LIMIT 1
+24/12/14 15:41:53 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce
+warning: No SupportedSourceVersion annotation found on org.apache.hadoop.hdds.conf.ConfigFileGenerator, returning RELEASE_6.
+warning: Supported source version 'RELEASE_6' from annotation processor 'org.apache.hadoop.hdds.conf.ConfigFileGenerator' less than -source '1.8'
+2 warnings
+24/12/14 15:42:03 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-ec2-user/compile/3ff511b00be17cbe57cd0d3c20d0f894/payments.jar
+24/12/14 15:42:03 WARN manager.PostgresqlManager: It looks like you are importing from postgresql.
+24/12/14 15:42:03 WARN manager.PostgresqlManager: This transfer can be faster! Use the --direct
+24/12/14 15:42:03 WARN manager.PostgresqlManager: option to exercise a postgresql-specific fast path.
+24/12/14 15:42:03 INFO mapreduce.ImportJobBase: Beginning import of payments
+24/12/14 15:42:04 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+24/12/14 15:42:08 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+24/12/14 15:42:09 INFO client.RMProxy: Connecting to ResourceManager at ip-172-31-3-80.eu-west-2.compute.internal/172.31.3.80:8032
+24/12/14 15:42:10 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/ec2-user/.staging/job_1729093996149_0487
+24/12/14 15:42:35 INFO db.DBInputFormat: Using read commited transaction isolation
+24/12/14 15:42:36 INFO mapreduce.JobSubmitter: number of splits:1
+24/12/14 15:42:36 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1729093996149_0487
+24/12/14 15:42:37 INFO mapreduce.JobSubmitter: Executing with tokens: []
+24/12/14 15:42:38 INFO conf.Configuration: resource-types.xml not found
+24/12/14 15:42:38 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+24/12/14 15:42:38 INFO impl.YarnClientImpl: Submitted application application_1729093996149_0487
+24/12/14 15:42:38 INFO mapreduce.Job: The url to track the job: http://ip-172-31-3-80.eu-west-2.compute.internal:8088/proxy/application_1729093996149_0487/
+24/12/14 15:42:38 INFO mapreduce.Job: Running job: job_1729093996149_0487
+24/12/14 15:43:41 INFO mapreduce.Job: Job job_1729093996149_0487 running in uber mode : false
+24/12/14 15:43:41 INFO mapreduce.Job:  map 0% reduce 0%
+24/12/14 15:43:52 INFO mapreduce.Job:  map 100% reduce 0%
+24/12/14 15:43:54 INFO mapreduce.Job: Job job_1729093996149_0487 completed successfully
+24/12/14 15:43:54 INFO mapreduce.Job: Counters: 33
+        File System Counters
+                FILE: Number of bytes read=0
+                FILE: Number of bytes written=260223
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=85
+                HDFS: Number of bytes written=95
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=1
+                Other local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=5312
+                Total time spent by all reduces in occupied slots (ms)=0
+                Total time spent by all map tasks (ms)=5312
+                Total vcore-milliseconds taken by all map tasks=21248
+                Total megabyte-milliseconds taken by all map tasks=43515904
+        Map-Reduce Framework
+                Map input records=2
+                Map output records=2
+                Input split bytes=85
+                Spilled Records=0
+                Failed Shuffles=0
+                Merged Map outputs=0
+                GC time elapsed (ms)=80
+                CPU time spent (ms)=900
+                Physical memory (bytes) snapshot=317095936
+                Virtual memory (bytes) snapshot=6620463104
+                Total committed heap usage (bytes)=303562752
+                Peak Map Physical memory (bytes)=317095936
+                Peak Map Virtual memory (bytes)=6620463104
+        File Input Format Counters
+                Bytes Read=0
+        File Output Format Counters
+                Bytes Written=95
+24/12/14 15:43:54 INFO mapreduce.ImportJobBase: Transferred 95 bytes in 106.2504 seconds (0.8941 bytes/sec)
+24/12/14 15:43:55 INFO mapreduce.ImportJobBase: Retrieved 2 records.
+[ec2-user@ip-172-31-13-101 ~]$ ^C
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/
+Found 4 items
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-13 17:27 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn/data5.csv
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:43 /tmp/bigdata_nov_2024/Hasnainnn/postgres
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+Found 2 items
+-rw-r--r--   3 ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/_SUCCESS
+-rw-r--r--   3 ec2-user hadoop       7982 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+-rw-r--r--   3 ec2-user hadoop       7982 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -cat /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+John,25,Male,New York,USA,true,1
+Alice,30,Female,London,UK,false,2
+Michael,40,Male,Paris,France,true,3
+Emma,35,Female,Berlin,Germany,false,4
+David,28,Male,Tokyo,Japan,true,5
+Jennifer,45,Female,Sydney,Australia,false,6
+Daniel,33,Male,Toronto,Canada,true,7
+Sophia,27,Female,Los Angeles,USA,true,8
+James,32,Male,Madrid,Spain,false,9
+Olivia,38,Female,Rome,Italy,true,10
+William,29,Male,Moscow,Russia,true,11
+Charlotte,31,Female,Beijing,China,false,12
+Benjamin,42,Male,Seoul,South Korea,true,13
+Amelia,26,Female,Mumbai,India,true,14
+Alexander,37,Male,São Paulo,Brazil,false,15
+Evelyn,34,Female,Mexico City,Mexico,true,16
+Logan,39,Male,Cairo,Egypt,false,17
+Abigail,36,Female,Johannesburg,South Africa,true,18
+Lucas,24,Male,Berlin,Germany,false,19
+Mia,41,Female,Tokyo,Japan,true,20
+Henry,28,Male,Paris,France,true,21
+Ella,29,Female,London,UK,false,22
+Jackson,43,Male,New York,USA,true,23
+Avery,30,Female,Sydney,Australia,false,24
+Sebastian,33,Male,Los Angeles,USA,true,25
+Scarlett,44,Female,Rome,Italy,true,26
+Liam,31,Male,Madrid,Spain,false,27
+Chloe,25,Female,Moscow,Russia,true,28
+Ethan,40,Male,Beijing,China,false,29
+Luna,32,Female,Seoul,South Korea,true,30
+Aiden,39,Male,Mumbai,India,true,31
+Nora,27,Female,São Paulo,Brazil,false,32
+Mason,38,Male,Mexico City,Mexico,true,33
+Harper,34,Female,Cairo,Egypt,false,34
+Carter,37,Male,Johannesburg,South Africa,true,35
+Madison,26,Female,Berlin,Germany,false,36
+Jayden,35,Male,Tokyo,Japan,true,37
+Eleanor,29,Female,Paris,France,true,38
+Elijah,42,Male,London,UK,false,39
+Penelope,28,Female,New York,USA,true,40
+Grayson,41,Male,Sydney,Australia,false,41
+Leah,30,Female,Los Angeles,USA,true,42
+Isaac,43,Male,Rome,Italy,true,43
+Skylar,31,Female,Madrid,Spain,false,44
+Sofia,44,Male,Moscow,Russia,true,45
+Jackson,36,Female,Beijing,China,false,46
+Wyatt,33,Male,Seoul,South Korea,true,47
+Zoe,37,Female,Mumbai,India,true,48
+Luke,39,Male,São Paulo,Brazil,false,49
+Riley,34,Female,Mexico City,Mexico,true,50
+Landon,38,Male,Cairo,Egypt,false,51
+Lily,35,Female,Johannesburg,South Africa,true,52
+Owen,40,Male,Berlin,Germany,false,53
+Eva,27,Female,Tokyo,Japan,true,54
+Gabriel,42,Male,Paris,France,true,55
+Piper,29,Female,London,UK,false,56
+Isaiah,43,Male,New York,USA,true,57
+Stella,30,Female,Sydney,Australia,false,58
+Nathan,44,Male,Los Angeles,USA,true,59
+Hannah,31,Female,Rome,Italy,true,60
+Thomas,36,Male,Madrid,Spain,false,61
+Aria,32,Female,Moscow,Russia,true,62
+Josiah,37,Male,Beijing,China,false,63
+Violet,33,Female,Seoul,South Korea,true,64
+Julian,38,Male,Mumbai,India,true,65
+Nova,34,Female,São Paulo,Brazil,false,66
+Eli,39,Male,Mexico City,Mexico,true,67
+Madeline,35,Female,Cairo,Egypt,false,68
+Colton,40,Male,Johannesburg,South Africa,true,69
+Raelynn,36,Female,Berlin,Germany,false,70
+Leo,41,Male,Tokyo,Japan,true,71
+Aubrey,37,Female,Paris,France,true,72
+Xavier,42,Male,London,UK,false,73
+Bella,38,Female,New York,USA,true,74
+Bentley,43,Male,Sydney,Australia,false,75
+Elise,39,Female,Los Angeles,USA,true,76
+Zachary,44,Male,Rome,Italy,true,77
+Adeline,40,Female,Madrid,Spain,false,78
+Jaxon,31,Male,Moscow,Russia,true,79
+Lillian,45,Female,Beijing,China,false,80
+Everett,32,Male,Seoul,South Korea,true,81
+Isla,34,Female,Mumbai,India,true,82
+David,38,Male,São Paulo,Brazil,false,83
+Adalyn,33,Female,Mexico City,Mexico,true,84
+Ezra,39,Male,Cairo,Egypt,false,85
+Brayden,35,Female,Johannesburg,South Africa,true,86
+Kaylee,41,Male,Berlin,Germany,false,87
+Jace,36,Female,Tokyo,Japan,true,88
+Allison,42,Male,Paris,France,true,89
+Makayla,37,Female,London,UK,false,90
+Jude,43,Male,New York,USA,true,91
+Maria,38,Female,Sydney,Australia,false,92
+Theodore,44,Male,Los Angeles,USA,true,93
+Cora,39,Female,Rome,Italy,true,94
+Camden,45,Male,Madrid,Spain,false,95
+Gianna,40,Female,Moscow,Russia,true,96
+Dylan,31,Male,Beijing,China,false,97
+Lyla,46,Female,Seoul,South Korea,true,98
+Kingston,32,Male,Mumbai,India,true,99
+Isabelle,41,Female,São Paulo,Brazil,false,100
+Jaxon,33,Male,Mexico City,Mexico,true,101
+Juliana,42,Female,Cairo,Egypt,false,102
+Leonardo,34,Male,Johannesburg,South Africa,true,103
+Catherine,43,Female,Berlin,Germany,false,104
+Roman,35,Male,Tokyo,Japan,true,105
+Skylar,44,Female,Paris,France,true,106
+Maverick,36,Male,London,UK,false,107
+Elena,45,Female,New York,USA,true,108
+Avery,37,Male,Sydney,Australia,false,109
+Lydia,46,Female,Los Angeles,USA,true,110
+Finn,38,Male,Rome,Italy,true,111
+Molly,47,Female,Madrid,Spain,false,112
+Asad,30,Male,London,UK,false,113
+Asad,30,Male,London,UK,false,114
+Sanket,30,Male,London,UK,false,115
+Uttam,21,Male,London,UK,false,116
+John,25,Male,New York,USA,true,117
+Alice,35,Female,Paris,France,true,118
+Emily,28,Female,Berlin,Germany,false,119
+Michael,40,Male,Sydney,Australia,true,120
+Sophia,32,Female,Tokyo,Japan,true,121
+David,45,Male,Toronto,Canada,false,122
+Emma,29,Female,Rome,Italy,true,123
+James,38,Male,Madrid,Spain,false,124
+Olivia,31,Female,Beijing,China,true,125
+Daniel,42,Male,Moscow,Russia,false,126
+Mia,27,Female,Dubai,UAE,true,127
+Liam,33,Male,Seoul,South Korea,false,128
+Ava,36,Female,Mumbai,India,true,129
+William,39,Male,Mexico City,Mexico,false,130
+Charlotte,34,Female,Cairo,Egypt,true,131
+John,25,Male,New York,USA,true,132
+Alice,35,Female,Paris,France,true,133
+Emily,28,Female,Berlin,Germany,false,134
+Michael,40,Male,Sydney,Australia,true,135
+Sophia,32,Female,Tokyo,Japan,true,136
+David,45,Male,Toronto,Canada,false,137
+Emma,29,Female,Rome,Italy,true,138
+James,38,Male,Madrid,Spain,false,139
+Olivia,31,Female,Beijing,China,true,140
+Daniel,42,Male,Moscow,Russia,false,141
+Mia,27,Female,Dubai,UAE,true,142
+Liam,33,Male,Seoul,South Korea,false,143
+Ava,36,Female,Mumbai,India,true,144
+William,39,Male,Mexico City,Mexico,false,145
+Charlotte,34,Female,Cairo,Egypt,true,146
+John,25,Male,New York,USA,true,147
+Alice,35,Female,Paris,France,true,148
+Emily,28,Female,Berlin,Germany,false,149
+Michael,40,Male,Sydney,Australia,true,150
+Sophia,32,Female,Tokyo,Japan,true,151
+David,45,Male,Toronto,Canada,false,152
+Emma,29,Female,Rome,Italy,true,153
+James,38,Male,Madrid,Spain,false,154
+Olivia,31,Female,Beijing,China,true,155
+Daniel,42,Male,Moscow,Russia,false,156
+Mia,27,Female,Dubai,UAE,true,157
+Liam,33,Male,Seoul,South Korea,false,158
+Ava,36,Female,Mumbai,India,true,159
+William,39,Male,Mexico City,Mexico,false,160
+Charlotte,34,Female,Cairo,Egypt,true,161
+John,25,Male,New York,USA,true,162
+Alice,35,Female,Paris,France,true,163
+Emily,28,Female,Berlin,Germany,false,164
+Michael,40,Male,Sydney,Australia,true,165
+Sophia,32,Female,Tokyo,Japan,true,166
+David,45,Male,Toronto,Canada,false,167
+Emma,29,Female,Rome,Italy,true,168
+James,38,Male,Madrid,Spain,false,169
+Olivia,31,Female,Beijing,China,true,170
+Daniel,42,Male,Moscow,Russia,false,171
+Mia,27,Female,Dubai,UAE,true,172
+Liam,33,Male,Seoul,South Korea,false,173
+Ava,36,Female,Mumbai,India,true,174
+William,39,Male,Mexico City,Mexico,false,175
+Charlotte,34,Female,Cairo,Egypt,true,176
+John,25,Male,New York,USA,true,177
+Alice,35,Female,Paris,France,true,178
+Emily,28,Female,Berlin,Germany,false,179
+Michael,40,Male,Sydney,Australia,true,180
+Sophia,32,Female,Tokyo,Japan,true,181
+David,45,Male,Toronto,Canada,false,182
+Emma,29,Female,Rome,Italy,true,183
+James,38,Male,Madrid,Spain,false,184
+Olivia,31,Female,Beijing,China,true,185
+Daniel,42,Male,Moscow,Russia,false,186
+Mia,27,Female,Dubai,UAE,true,187
+Liam,33,Male,Seoul,South Korea,false,188
+Ava,36,Female,Mumbai,India,true,189
+William,39,Male,Mexico City,Mexico,false,190
+Charlotte,34,Female,Cairo,Egypt,true,191
+John,25,Male,New York,USA,true,192
+Alice,35,Female,Paris,France,true,193
+Emily,28,Female,Berlin,Germany,false,194
+Michael,40,Male,Sydney,Australia,true,195
+Sophia,32,Female,Tokyo,Japan,true,196
+David,45,Male,Toronto,Canada,false,197
+Emma,29,Female,Rome,Italy,true,198
+James,38,Male,Madrid,Spain,false,199
+Olivia,31,Female,Beijing,China,true,200
+Daniel,42,Male,Moscow,Russia,false,201
+Mia,27,Female,Dubai,UAE,true,202
+Liam,33,Male,Seoul,South Korea,false,203
+Ava,36,Female,Mumbai,India,true,204
+William,39,Male,Mexico City,Mexico,false,205
+Charlotte,34,Female,Cairo,Egypt,true,206
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnain/
+Found 15 items
+drwxr-xr-x   - hdfs     hadoop          0 2024-12-06 15:47 /tmp/bigdata_nov_2024/Hasnain/count
+drwxr-xr-x   - hdfs     hadoop          0 2024-12-06 12:55 /tmp/bigdata_nov_2024/Hasnain/count9
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-11 23:40 /tmp/bigdata_nov_2024/Hasnain/data
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-09 18:27 /tmp/bigdata_nov_2024/Hasnain/data.csv
+-rw-r--r--   3 ec2-user hadoop        734 2024-12-06 11:56 /tmp/bigdata_nov_2024/Hasnain/data.txt
+-rw-r--r--   3 ec2-user hadoop        803 2024-12-06 15:27 /tmp/bigdata_nov_2024/Hasnain/hasina.txt
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-10 12:04 /tmp/bigdata_nov_2024/Hasnain/mapreduce
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 11:46 /tmp/bigdata_nov_2024/Hasnain/output2
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 13:26 /tmp/bigdata_nov_2024/Hasnain/output4
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 16:29 /tmp/bigdata_nov_2024/Hasnain/output6
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 16:49 /tmp/bigdata_nov_2024/Hasnain/output7
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 16:58 /tmp/bigdata_nov_2024/Hasnain/output8
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-09 17:30 /tmp/bigdata_nov_2024/Hasnain/output9
+drwxrwxrwx   - ec2-user hadoop          0 2024-12-12 01:38 /tmp/bigdata_nov_2024/Hasnain/sales_data
+drwxrwxrwx   - ec2-user hadoop          0 2024-12-12 00:44 /tmp/bigdata_nov_2024/Hasnain/sales_data_partioned
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/
+Found 4 items
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-13 17:27 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn/data5.csv
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:43 /tmp/bigdata_nov_2024/Hasnainnn/postgres
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+Found 2 items
+-rw-r--r--   3 ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/_SUCCESS
+-rw-r--r--   3 ec2-user hadoop       7982 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -cat /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+John,25,Male,New York,USA,true,1
+Alice,30,Female,London,UK,false,2
+Michael,40,Male,Paris,France,true,3
+Emma,35,Female,Berlin,Germany,false,4
+David,28,Male,Tokyo,Japan,true,5
+Jennifer,45,Female,Sydney,Australia,false,6
+Daniel,33,Male,Toronto,Canada,true,7
+Sophia,27,Female,Los Angeles,USA,true,8
+James,32,Male,Madrid,Spain,false,9
+Olivia,38,Female,Rome,Italy,true,10
+William,29,Male,Moscow,Russia,true,11
+Charlotte,31,Female,Beijing,China,false,12
+Benjamin,42,Male,Seoul,South Korea,true,13
+Amelia,26,Female,Mumbai,India,true,14
+Alexander,37,Male,São Paulo,Brazil,false,15
+Evelyn,34,Female,Mexico City,Mexico,true,16
+Logan,39,Male,Cairo,Egypt,false,17
+Abigail,36,Female,Johannesburg,South Africa,true,18
+Lucas,24,Male,Berlin,Germany,false,19
+Mia,41,Female,Tokyo,Japan,true,20
+Henry,28,Male,Paris,France,true,21
+Ella,29,Female,London,UK,false,22
+Jackson,43,Male,New York,USA,true,23
+Avery,30,Female,Sydney,Australia,false,24
+Sebastian,33,Male,Los Angeles,USA,true,25
+Scarlett,44,Female,Rome,Italy,true,26
+Liam,31,Male,Madrid,Spain,false,27
+Chloe,25,Female,Moscow,Russia,true,28
+Ethan,40,Male,Beijing,China,false,29
+Luna,32,Female,Seoul,South Korea,true,30
+Aiden,39,Male,Mumbai,India,true,31
+Nora,27,Female,São Paulo,Brazil,false,32
+Mason,38,Male,Mexico City,Mexico,true,33
+Harper,34,Female,Cairo,Egypt,false,34
+Carter,37,Male,Johannesburg,South Africa,true,35
+Madison,26,Female,Berlin,Germany,false,36
+Jayden,35,Male,Tokyo,Japan,true,37
+Eleanor,29,Female,Paris,France,true,38
+Elijah,42,Male,London,UK,false,39
+Penelope,28,Female,New York,USA,true,40
+Grayson,41,Male,Sydney,Australia,false,41
+Leah,30,Female,Los Angeles,USA,true,42
+Isaac,43,Male,Rome,Italy,true,43
+Skylar,31,Female,Madrid,Spain,false,44
+Sofia,44,Male,Moscow,Russia,true,45
+Jackson,36,Female,Beijing,China,false,46
+Wyatt,33,Male,Seoul,South Korea,true,47
+Zoe,37,Female,Mumbai,India,true,48
+Luke,39,Male,São Paulo,Brazil,false,49
+Riley,34,Female,Mexico City,Mexico,true,50
+Landon,38,Male,Cairo,Egypt,false,51
+Lily,35,Female,Johannesburg,South Africa,true,52
+Owen,40,Male,Berlin,Germany,false,53
+Eva,27,Female,Tokyo,Japan,true,54
+Gabriel,42,Male,Paris,France,true,55
+Piper,29,Female,London,UK,false,56
+Isaiah,43,Male,New York,USA,true,57
+Stella,30,Female,Sydney,Australia,false,58
+Nathan,44,Male,Los Angeles,USA,true,59
+Hannah,31,Female,Rome,Italy,true,60
+Thomas,36,Male,Madrid,Spain,false,61
+Aria,32,Female,Moscow,Russia,true,62
+Josiah,37,Male,Beijing,China,false,63
+Violet,33,Female,Seoul,South Korea,true,64
+Julian,38,Male,Mumbai,India,true,65
+Nova,34,Female,São Paulo,Brazil,false,66
+Eli,39,Male,Mexico City,Mexico,true,67
+Madeline,35,Female,Cairo,Egypt,false,68
+Colton,40,Male,Johannesburg,South Africa,true,69
+Raelynn,36,Female,Berlin,Germany,false,70
+Leo,41,Male,Tokyo,Japan,true,71
+Aubrey,37,Female,Paris,France,true,72
+Xavier,42,Male,London,UK,false,73
+Bella,38,Female,New York,USA,true,74
+Bentley,43,Male,Sydney,Australia,false,75
+Elise,39,Female,Los Angeles,USA,true,76
+Zachary,44,Male,Rome,Italy,true,77
+Adeline,40,Female,Madrid,Spain,false,78
+Jaxon,31,Male,Moscow,Russia,true,79
+Lillian,45,Female,Beijing,China,false,80
+Everett,32,Male,Seoul,South Korea,true,81
+Isla,34,Female,Mumbai,India,true,82
+David,38,Male,São Paulo,Brazil,false,83
+Adalyn,33,Female,Mexico City,Mexico,true,84
+Ezra,39,Male,Cairo,Egypt,false,85
+Brayden,35,Female,Johannesburg,South Africa,true,86
+Kaylee,41,Male,Berlin,Germany,false,87
+Jace,36,Female,Tokyo,Japan,true,88
+Allison,42,Male,Paris,France,true,89
+Makayla,37,Female,London,UK,false,90
+Jude,43,Male,New York,USA,true,91
+Maria,38,Female,Sydney,Australia,false,92
+Theodore,44,Male,Los Angeles,USA,true,93
+Cora,39,Female,Rome,Italy,true,94
+Camden,45,Male,Madrid,Spain,false,95
+Gianna,40,Female,Moscow,Russia,true,96
+Dylan,31,Male,Beijing,China,false,97
+Lyla,46,Female,Seoul,South Korea,true,98
+Kingston,32,Male,Mumbai,India,true,99
+Isabelle,41,Female,São Paulo,Brazil,false,100
+Jaxon,33,Male,Mexico City,Mexico,true,101
+Juliana,42,Female,Cairo,Egypt,false,102
+Leonardo,34,Male,Johannesburg,South Africa,true,103
+Catherine,43,Female,Berlin,Germany,false,104
+Roman,35,Male,Tokyo,Japan,true,105
+Skylar,44,Female,Paris,France,true,106
+Maverick,36,Male,London,UK,false,107
+Elena,45,Female,New York,USA,true,108
+Avery,37,Male,Sydney,Australia,false,109
+Lydia,46,Female,Los Angeles,USA,true,110
+Finn,38,Male,Rome,Italy,true,111
+Molly,47,Female,Madrid,Spain,false,112
+Asad,30,Male,London,UK,false,113
+Asad,30,Male,London,UK,false,114
+Sanket,30,Male,London,UK,false,115
+Uttam,21,Male,London,UK,false,116
+John,25,Male,New York,USA,true,117
+Alice,35,Female,Paris,France,true,118
+Emily,28,Female,Berlin,Germany,false,119
+Michael,40,Male,Sydney,Australia,true,120
+Sophia,32,Female,Tokyo,Japan,true,121
+David,45,Male,Toronto,Canada,false,122
+Emma,29,Female,Rome,Italy,true,123
+James,38,Male,Madrid,Spain,false,124
+Olivia,31,Female,Beijing,China,true,125
+Daniel,42,Male,Moscow,Russia,false,126
+Mia,27,Female,Dubai,UAE,true,127
+Liam,33,Male,Seoul,South Korea,false,128
+Ava,36,Female,Mumbai,India,true,129
+William,39,Male,Mexico City,Mexico,false,130
+Charlotte,34,Female,Cairo,Egypt,true,131
+John,25,Male,New York,USA,true,132
+Alice,35,Female,Paris,France,true,133
+Emily,28,Female,Berlin,Germany,false,134
+Michael,40,Male,Sydney,Australia,true,135
+Sophia,32,Female,Tokyo,Japan,true,136
+David,45,Male,Toronto,Canada,false,137
+Emma,29,Female,Rome,Italy,true,138
+James,38,Male,Madrid,Spain,false,139
+Olivia,31,Female,Beijing,China,true,140
+Daniel,42,Male,Moscow,Russia,false,141
+Mia,27,Female,Dubai,UAE,true,142
+Liam,33,Male,Seoul,South Korea,false,143
+Ava,36,Female,Mumbai,India,true,144
+William,39,Male,Mexico City,Mexico,false,145
+Charlotte,34,Female,Cairo,Egypt,true,146
+John,25,Male,New York,USA,true,147
+Alice,35,Female,Paris,France,true,148
+Emily,28,Female,Berlin,Germany,false,149
+Michael,40,Male,Sydney,Australia,true,150
+Sophia,32,Female,Tokyo,Japan,true,151
+David,45,Male,Toronto,Canada,false,152
+Emma,29,Female,Rome,Italy,true,153
+James,38,Male,Madrid,Spain,false,154
+Olivia,31,Female,Beijing,China,true,155
+Daniel,42,Male,Moscow,Russia,false,156
+Mia,27,Female,Dubai,UAE,true,157
+Liam,33,Male,Seoul,South Korea,false,158
+Ava,36,Female,Mumbai,India,true,159
+William,39,Male,Mexico City,Mexico,false,160
+Charlotte,34,Female,Cairo,Egypt,true,161
+John,25,Male,New York,USA,true,162
+Alice,35,Female,Paris,France,true,163
+Emily,28,Female,Berlin,Germany,false,164
+Michael,40,Male,Sydney,Australia,true,165
+Sophia,32,Female,Tokyo,Japan,true,166
+David,45,Male,Toronto,Canada,false,167
+Emma,29,Female,Rome,Italy,true,168
+James,38,Male,Madrid,Spain,false,169
+Olivia,31,Female,Beijing,China,true,170
+Daniel,42,Male,Moscow,Russia,false,171
+Mia,27,Female,Dubai,UAE,true,172
+Liam,33,Male,Seoul,South Korea,false,173
+Ava,36,Female,Mumbai,India,true,174
+William,39,Male,Mexico City,Mexico,false,175
+Charlotte,34,Female,Cairo,Egypt,true,176
+John,25,Male,New York,USA,true,177
+Alice,35,Female,Paris,France,true,178
+Emily,28,Female,Berlin,Germany,false,179
+Michael,40,Male,Sydney,Australia,true,180
+Sophia,32,Female,Tokyo,Japan,true,181
+David,45,Male,Toronto,Canada,false,182
+Emma,29,Female,Rome,Italy,true,183
+James,38,Male,Madrid,Spain,false,184
+Olivia,31,Female,Beijing,China,true,185
+Daniel,42,Male,Moscow,Russia,false,186
+Mia,27,Female,Dubai,UAE,true,187
+Liam,33,Male,Seoul,South Korea,false,188
+Ava,36,Female,Mumbai,India,true,189
+William,39,Male,Mexico City,Mexico,false,190
+Charlotte,34,Female,Cairo,Egypt,true,191
+John,25,Male,New York,USA,true,192
+Alice,35,Female,Paris,France,true,193
+Emily,28,Female,Berlin,Germany,false,194
+Michael,40,Male,Sydney,Australia,true,195
+Sophia,32,Female,Tokyo,Japan,true,196
+David,45,Male,Toronto,Canada,false,197
+Emma,29,Female,Rome,Italy,true,198
+James,38,Male,Madrid,Spain,false,199
+Olivia,31,Female,Beijing,China,true,200
+Daniel,42,Male,Moscow,Russia,false,201
+Mia,27,Female,Dubai,UAE,true,202
+Liam,33,Male,Seoul,South Korea,false,203
+Ava,36,Female,Mumbai,India,true,204
+William,39,Male,Mexico City,Mexico,false,205
+Charlotte,34,Female,Cairo,Egypt,true,206
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn
+Found 4 items
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-13 17:27 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn/data5.csv
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:43 /tmp/bigdata_nov_2024/Hasnainnn/postgres
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/
+Found 2 items
+-rw-r--r--   3 ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/_SUCCESS
+-rw-r--r--   3 ec2-user hadoop       7982 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -cat /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000
+John,25,Male,New York,USA,true,1
+Alice,30,Female,London,UK,false,2
+Michael,40,Male,Paris,France,true,3
+Emma,35,Female,Berlin,Germany,false,4
+David,28,Male,Tokyo,Japan,true,5
+Jennifer,45,Female,Sydney,Australia,false,6
+Daniel,33,Male,Toronto,Canada,true,7
+Sophia,27,Female,Los Angeles,USA,true,8
+James,32,Male,Madrid,Spain,false,9
+Olivia,38,Female,Rome,Italy,true,10
+William,29,Male,Moscow,Russia,true,11
+Charlotte,31,Female,Beijing,China,false,12
+Benjamin,42,Male,Seoul,South Korea,true,13
+Amelia,26,Female,Mumbai,India,true,14
+Alexander,37,Male,São Paulo,Brazil,false,15
+Evelyn,34,Female,Mexico City,Mexico,true,16
+Logan,39,Male,Cairo,Egypt,false,17
+Abigail,36,Female,Johannesburg,South Africa,true,18
+Lucas,24,Male,Berlin,Germany,false,19
+Mia,41,Female,Tokyo,Japan,true,20
+Henry,28,Male,Paris,France,true,21
+Ella,29,Female,London,UK,false,22
+Jackson,43,Male,New York,USA,true,23
+Avery,30,Female,Sydney,Australia,false,24
+Sebastian,33,Male,Los Angeles,USA,true,25
+Scarlett,44,Female,Rome,Italy,true,26
+Liam,31,Male,Madrid,Spain,false,27
+Chloe,25,Female,Moscow,Russia,true,28
+Ethan,40,Male,Beijing,China,false,29
+Luna,32,Female,Seoul,South Korea,true,30
+Aiden,39,Male,Mumbai,India,true,31
+Nora,27,Female,São Paulo,Brazil,false,32
+Mason,38,Male,Mexico City,Mexico,true,33
+Harper,34,Female,Cairo,Egypt,false,34
+Carter,37,Male,Johannesburg,South Africa,true,35
+Madison,26,Female,Berlin,Germany,false,36
+Jayden,35,Male,Tokyo,Japan,true,37
+Eleanor,29,Female,Paris,France,true,38
+Elijah,42,Male,London,UK,false,39
+Penelope,28,Female,New York,USA,true,40
+Grayson,41,Male,Sydney,Australia,false,41
+Leah,30,Female,Los Angeles,USA,true,42
+Isaac,43,Male,Rome,Italy,true,43
+Skylar,31,Female,Madrid,Spain,false,44
+Sofia,44,Male,Moscow,Russia,true,45
+Jackson,36,Female,Beijing,China,false,46
+Wyatt,33,Male,Seoul,South Korea,true,47
+Zoe,37,Female,Mumbai,India,true,48
+Luke,39,Male,São Paulo,Brazil,false,49
+Riley,34,Female,Mexico City,Mexico,true,50
+Landon,38,Male,Cairo,Egypt,false,51
+Lily,35,Female,Johannesburg,South Africa,true,52
+Owen,40,Male,Berlin,Germany,false,53
+Eva,27,Female,Tokyo,Japan,true,54
+Gabriel,42,Male,Paris,France,true,55
+Piper,29,Female,London,UK,false,56
+Isaiah,43,Male,New York,USA,true,57
+Stella,30,Female,Sydney,Australia,false,58
+Nathan,44,Male,Los Angeles,USA,true,59
+Hannah,31,Female,Rome,Italy,true,60
+Thomas,36,Male,Madrid,Spain,false,61
+Aria,32,Female,Moscow,Russia,true,62
+Josiah,37,Male,Beijing,China,false,63
+Violet,33,Female,Seoul,South Korea,true,64
+Julian,38,Male,Mumbai,India,true,65
+Nova,34,Female,São Paulo,Brazil,false,66
+Eli,39,Male,Mexico City,Mexico,true,67
+Madeline,35,Female,Cairo,Egypt,false,68
+Colton,40,Male,Johannesburg,South Africa,true,69
+Raelynn,36,Female,Berlin,Germany,false,70
+Leo,41,Male,Tokyo,Japan,true,71
+Aubrey,37,Female,Paris,France,true,72
+Xavier,42,Male,London,UK,false,73
+Bella,38,Female,New York,USA,true,74
+Bentley,43,Male,Sydney,Australia,false,75
+Elise,39,Female,Los Angeles,USA,true,76
+Zachary,44,Male,Rome,Italy,true,77
+Adeline,40,Female,Madrid,Spain,false,78
+Jaxon,31,Male,Moscow,Russia,true,79
+Lillian,45,Female,Beijing,China,false,80
+Everett,32,Male,Seoul,South Korea,true,81
+Isla,34,Female,Mumbai,India,true,82
+David,38,Male,São Paulo,Brazil,false,83
+Adalyn,33,Female,Mexico City,Mexico,true,84
+Ezra,39,Male,Cairo,Egypt,false,85
+Brayden,35,Female,Johannesburg,South Africa,true,86
+Kaylee,41,Male,Berlin,Germany,false,87
+Jace,36,Female,Tokyo,Japan,true,88
+Allison,42,Male,Paris,France,true,89
+Makayla,37,Female,London,UK,false,90
+Jude,43,Male,New York,USA,true,91
+Maria,38,Female,Sydney,Australia,false,92
+Theodore,44,Male,Los Angeles,USA,true,93
+Cora,39,Female,Rome,Italy,true,94
+Camden,45,Male,Madrid,Spain,false,95
+Gianna,40,Female,Moscow,Russia,true,96
+Dylan,31,Male,Beijing,China,false,97
+Lyla,46,Female,Seoul,South Korea,true,98
+Kingston,32,Male,Mumbai,India,true,99
+Isabelle,41,Female,São Paulo,Brazil,false,100
+Jaxon,33,Male,Mexico City,Mexico,true,101
+Juliana,42,Female,Cairo,Egypt,false,102
+Leonardo,34,Male,Johannesburg,South Africa,true,103
+Catherine,43,Female,Berlin,Germany,false,104
+Roman,35,Male,Tokyo,Japan,true,105
+Skylar,44,Female,Paris,France,true,106
+Maverick,36,Male,London,UK,false,107
+Elena,45,Female,New York,USA,true,108
+Avery,37,Male,Sydney,Australia,false,109
+Lydia,46,Female,Los Angeles,USA,true,110
+Finn,38,Male,Rome,Italy,true,111
+Molly,47,Female,Madrid,Spain,false,112
+Asad,30,Male,London,UK,false,113
+Asad,30,Male,London,UK,false,114
+Sanket,30,Male,London,UK,false,115
+Uttam,21,Male,London,UK,false,116
+John,25,Male,New York,USA,true,117
+Alice,35,Female,Paris,France,true,118
+Emily,28,Female,Berlin,Germany,false,119
+Michael,40,Male,Sydney,Australia,true,120
+Sophia,32,Female,Tokyo,Japan,true,121
+David,45,Male,Toronto,Canada,false,122
+Emma,29,Female,Rome,Italy,true,123
+James,38,Male,Madrid,Spain,false,124
+Olivia,31,Female,Beijing,China,true,125
+Daniel,42,Male,Moscow,Russia,false,126
+Mia,27,Female,Dubai,UAE,true,127
+Liam,33,Male,Seoul,South Korea,false,128
+Ava,36,Female,Mumbai,India,true,129
+William,39,Male,Mexico City,Mexico,false,130
+Charlotte,34,Female,Cairo,Egypt,true,131
+John,25,Male,New York,USA,true,132
+Alice,35,Female,Paris,France,true,133
+Emily,28,Female,Berlin,Germany,false,134
+Michael,40,Male,Sydney,Australia,true,135
+Sophia,32,Female,Tokyo,Japan,true,136
+David,45,Male,Toronto,Canada,false,137
+Emma,29,Female,Rome,Italy,true,138
+James,38,Male,Madrid,Spain,false,139
+Olivia,31,Female,Beijing,China,true,140
+Daniel,42,Male,Moscow,Russia,false,141
+Mia,27,Female,Dubai,UAE,true,142
+Liam,33,Male,Seoul,South Korea,false,143
+Ava,36,Female,Mumbai,India,true,144
+William,39,Male,Mexico City,Mexico,false,145
+Charlotte,34,Female,Cairo,Egypt,true,146
+John,25,Male,New York,USA,true,147
+Alice,35,Female,Paris,France,true,148
+Emily,28,Female,Berlin,Germany,false,149
+Michael,40,Male,Sydney,Australia,true,150
+Sophia,32,Female,Tokyo,Japan,true,151
+David,45,Male,Toronto,Canada,false,152
+Emma,29,Female,Rome,Italy,true,153
+James,38,Male,Madrid,Spain,false,154
+Olivia,31,Female,Beijing,China,true,155
+Daniel,42,Male,Moscow,Russia,false,156
+Mia,27,Female,Dubai,UAE,true,157
+Liam,33,Male,Seoul,South Korea,false,158
+Ava,36,Female,Mumbai,India,true,159
+William,39,Male,Mexico City,Mexico,false,160
+Charlotte,34,Female,Cairo,Egypt,true,161
+John,25,Male,New York,USA,true,162
+Alice,35,Female,Paris,France,true,163
+Emily,28,Female,Berlin,Germany,false,164
+Michael,40,Male,Sydney,Australia,true,165
+Sophia,32,Female,Tokyo,Japan,true,166
+David,45,Male,Toronto,Canada,false,167
+Emma,29,Female,Rome,Italy,true,168
+James,38,Male,Madrid,Spain,false,169
+Olivia,31,Female,Beijing,China,true,170
+Daniel,42,Male,Moscow,Russia,false,171
+Mia,27,Female,Dubai,UAE,true,172
+Liam,33,Male,Seoul,South Korea,false,173
+Ava,36,Female,Mumbai,India,true,174
+William,39,Male,Mexico City,Mexico,false,175
+Charlotte,34,Female,Cairo,Egypt,true,176
+John,25,Male,New York,USA,true,177
+Alice,35,Female,Paris,France,true,178
+Emily,28,Female,Berlin,Germany,false,179
+Michael,40,Male,Sydney,Australia,true,180
+Sophia,32,Female,Tokyo,Japan,true,181
+David,45,Male,Toronto,Canada,false,182
+Emma,29,Female,Rome,Italy,true,183
+James,38,Male,Madrid,Spain,false,184
+Olivia,31,Female,Beijing,China,true,185
+Daniel,42,Male,Moscow,Russia,false,186
+Mia,27,Female,Dubai,UAE,true,187
+Liam,33,Male,Seoul,South Korea,false,188
+Ava,36,Female,Mumbai,India,true,189
+William,39,Male,Mexico City,Mexico,false,190
+Charlotte,34,Female,Cairo,Egypt,true,191
+John,25,Male,New York,USA,true,192
+Alice,35,Female,Paris,France,true,193
+Emily,28,Female,Berlin,Germany,false,194
+Michael,40,Male,Sydney,Australia,true,195
+Sophia,32,Female,Tokyo,Japan,true,196
+David,45,Male,Toronto,Canada,false,197
+Emma,29,Female,Rome,Italy,true,198
+James,38,Male,Madrid,Spain,false,199
+Olivia,31,Female,Beijing,China,true,200
+Daniel,42,Male,Moscow,Russia,false,201
+Mia,27,Female,Dubai,UAE,true,202
+Liam,33,Male,Seoul,South Korea,false,203
+Ava,36,Female,Mumbai,India,true,204
+William,39,Male,Mexico City,Mexico,false,205
+Charlotte,34,Female,Cairo,Egypt,true,206
+[ec2-user@ip-172-31-13-101 ~]$ sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table people --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgreshas
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/cloudera/parcels/CDH-7.1.7-1.cdh7.1.7.p0.15945976/jars/log4j-slf4j-impl-2.13.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+24/12/14 16:12:16 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7.7.1.7.0-551
+24/12/14 16:12:16 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+24/12/14 16:12:16 INFO manager.SqlManager: Using default fetchSize of 1000
+24/12/14 16:12:16 INFO tool.CodeGenTool: Beginning code generation
+24/12/14 16:12:18 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM "people" AS t LIMIT 1
+24/12/14 16:12:18 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce
+warning: No SupportedSourceVersion annotation found on org.apache.hadoop.hdds.conf.ConfigFileGenerator, returning RELEASE_6.
+warning: Supported source version 'RELEASE_6' from annotation processor 'org.apache.hadoop.hdds.conf.ConfigFileGenerator' less than -source '1.8'
+2 warnings
+24/12/14 16:12:26 WARN orm.CompilationManager: Could not rename /tmp/sqoop-ec2-user/compile/9c36699076caaeef06da75dca3e41219/people.java to /home/ec2-user/./people.java. Error: Destination '/home/ec2-user/./people.java' already exists
+24/12/14 16:12:26 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-ec2-user/compile/9c36699076caaeef06da75dca3e41219/people.jar
+24/12/14 16:12:27 WARN manager.PostgresqlManager: It looks like you are importing from postgresql.
+24/12/14 16:12:27 WARN manager.PostgresqlManager: This transfer can be faster! Use the --direct
+24/12/14 16:12:27 WARN manager.PostgresqlManager: option to exercise a postgresql-specific fast path.
+24/12/14 16:12:27 INFO mapreduce.ImportJobBase: Beginning import of people
+24/12/14 16:12:27 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+24/12/14 16:12:31 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+24/12/14 16:12:31 INFO client.RMProxy: Connecting to ResourceManager at ip-172-31-3-80.eu-west-2.compute.internal/172.31.3.80:8032
+24/12/14 16:12:33 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/ec2-user/.staging/job_1729093996149_0488
+24/12/14 16:12:55 INFO db.DBInputFormat: Using read commited transaction isolation
+24/12/14 16:12:55 INFO mapreduce.JobSubmitter: number of splits:1
+24/12/14 16:12:56 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1729093996149_0488
+24/12/14 16:12:56 INFO mapreduce.JobSubmitter: Executing with tokens: []
+24/12/14 16:12:57 INFO conf.Configuration: resource-types.xml not found
+24/12/14 16:12:57 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+24/12/14 16:12:57 INFO impl.YarnClientImpl: Submitted application application_1729093996149_0488
+24/12/14 16:12:57 INFO mapreduce.Job: The url to track the job: http://ip-172-31-3-80.eu-west-2.compute.internal:8088/proxy/application_1729093996149_0488/
+24/12/14 16:12:57 INFO mapreduce.Job: Running job: job_1729093996149_0488
+24/12/14 16:13:04 INFO mapreduce.Job: Job job_1729093996149_0488 running in uber mode : false
+24/12/14 16:13:04 INFO mapreduce.Job:  map 0% reduce 0%
+24/12/14 16:13:26 INFO mapreduce.Job:  map 100% reduce 0%
+24/12/14 16:13:27 INFO mapreduce.Job: Job job_1729093996149_0488 completed successfully
+24/12/14 16:13:28 INFO mapreduce.Job: Counters: 33
+        File System Counters
+                FILE: Number of bytes read=0
+                FILE: Number of bytes written=260192
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=85
+                HDFS: Number of bytes written=920
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=1
+                Other local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=19290
+                Total time spent by all reduces in occupied slots (ms)=0
+                Total time spent by all map tasks (ms)=19290
+                Total vcore-milliseconds taken by all map tasks=77160
+                Total megabyte-milliseconds taken by all map tasks=158023680
+        Map-Reduce Framework
+                Map input records=38
+                Map output records=38
+                Input split bytes=85
+                Spilled Records=0
+                Failed Shuffles=0
+                Merged Map outputs=0
+                GC time elapsed (ms)=702
+                CPU time spent (ms)=4350
+                Physical memory (bytes) snapshot=324448256
+                Virtual memory (bytes) snapshot=6655102976
+                Total committed heap usage (bytes)=319815680
+                Peak Map Physical memory (bytes)=324448256
+                Peak Map Virtual memory (bytes)=6655102976
+        File Input Format Counters
+                Bytes Read=0
+        File Output Format Counters
+                Bytes Written=920
+24/12/14 16:13:28 INFO mapreduce.ImportJobBase: Transferred 920 bytes in 56.8005 seconds (16.1971 bytes/sec)
+24/12/14 16:13:28 INFO mapreduce.ImportJobBase: Retrieved 38 records.
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn
+Found 5 items
+-rw-r--r--   3 ec2-user hadoop        102 2024-12-13 17:27 /tmp/bigdata_nov_2024/Hasnainnn/data3.csv
+-rw-r--r--   3 ec2-user hadoop        121 2024-12-13 17:35 /tmp/bigdata_nov_2024/Hasnainnn/data5.csv
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:43 /tmp/bigdata_nov_2024/Hasnainnn/postgres
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 15:40 /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop
+drwxr-xr-x   - ec2-user hadoop          0 2024-12-14 16:13 /tmp/bigdata_nov_2024/Hasnainnn/postgreshas
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -ls /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/
+Found 2 items
+-rw-r--r--   3 ec2-user hadoop          0 2024-12-14 16:13 /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/_SUCCESS
+-rw-r--r--   3 ec2-user hadoop        920 2024-12-14 16:13 /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/part-m-00000
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -cat /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/part-m-00000
+1,John Doe,28,Software Engineer
+2,Jane Doe,32,Data Scientist
+3,Jim Brown,45,Manager
+4,Seb Tian,31,Data Scientist
+5,Jim,45,Scientist
+10,AMEN,30,Data Scientist
+11,JOHN,32,Data Scientist
+12,TOM,56,Data Scientist
+13,RICHARD,65,Data Scientist
+14,John,40,Tutor
+15,Nick,42,Trainer
+6,Adam,34,Scientist
+7,Maryam,24,Scientist
+8,Mahsa,43,Scientist
+9,Negar,45,Scientist
+16,Mahi,56,data Engineer
+17,Mahi,56,data Engineer
+18,Mahi,56,data Engineer
+19,Mahi,56,data Engineer
+20,Poonia Taheri,30,Software Developer
+21,Poonia Taheri,30,Software Developer
+22,Jane Smith,25,Graphic Designer
+23,Michael Brown,40,Project Manager
+24,Linda Green,28,Data Analyst
+25,Tony Stark,35,Engineer
+30,Eahi,40,data Engineer
+31,Eahi,40,data Engineer
+32,Nahi,27,null
+33,Mahi,-23,null
+34,Rupali,12,SME
+35,soloman,12,SME
+50,S vanathi,55,consultant
+51,Deepu,20,Consultant
+52,deni,8,doctor
+53,reni,6,Engineer
+54,nagabharath,28,FE
+55,nag,29,FE2
+56,bharath,30,FE3
+[ec2-user@ip-172-31-13-101 ~]$ sqoop import --connect jdbc:postgresql://18.132.73.146:5432/testdb --username consultants --password WelcomeItc@2022 --table people --m 1 --target-dir /tmp/bigdata_nov_2024/Hasnainnn/postgreshas^C
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -cat /tmp/bigdata_nov_2024/Hasnainnn/postgreshas/part-m-00000/
+1,John Doe,28,Software Engineer
+2,Jane Doe,32,Data Scientist
+3,Jim Brown,45,Manager
+4,Seb Tian,31,Data Scientist
+5,Jim,45,Scientist
+10,AMEN,30,Data Scientist
+11,JOHN,32,Data Scientist
+12,TOM,56,Data Scientist
+13,RICHARD,65,Data Scientist
+14,John,40,Tutor
+15,Nick,42,Trainer
+6,Adam,34,Scientist
+7,Maryam,24,Scientist
+8,Mahsa,43,Scientist
+9,Negar,45,Scientist
+16,Mahi,56,data Engineer
+17,Mahi,56,data Engineer
+18,Mahi,56,data Engineer
+19,Mahi,56,data Engineer
+20,Poonia Taheri,30,Software Developer
+21,Poonia Taheri,30,Software Developer
+22,Jane Smith,25,Graphic Designer
+23,Michael Brown,40,Project Manager
+24,Linda Green,28,Data Analyst
+25,Tony Stark,35,Engineer
+30,Eahi,40,data Engineer
+31,Eahi,40,data Engineer
+32,Nahi,27,null
+33,Mahi,-23,null
+34,Rupali,12,SME
+35,soloman,12,SME
+50,S vanathi,55,consultant
+51,Deepu,20,Consultant
+52,deni,8,doctor
+53,reni,6,Engineer
+54,nagabharath,28,FE
+55,nag,29,FE2
+56,bharath,30,FE3
+[ec2-user@ip-172-31-13-101 ~]$ hdfs dfs -cat /tmp/bigdata_nov_2024/Hasnainnn/postgrescoop/part-m-00000^C                      [ec2-user@ip-172-31-13-101 ~]$
